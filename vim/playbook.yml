@@ -1,0 +1,10 @@
+- hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+    - debug:
+        var: inventory_hostname
+    - name: install console vim
+      package:
+        name: vim-nox
+        state: present

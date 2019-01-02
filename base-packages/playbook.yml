@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+    - name: install base packages
+      package:
+        name: tmux
+        state: present

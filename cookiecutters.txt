@@ -1,0 +1,2 @@
+../cc-ansible-vim name=vim
+../cc-ansible-base-packages name=base-packages
