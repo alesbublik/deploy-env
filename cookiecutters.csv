@@ -1,0 +1,3 @@
+source, branch or tag or commit, template data
+../cc-ansible-vim,             , name=vim
+../cc-ansible-base-packages,   , name=base-packages
