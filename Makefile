@@ -4,7 +4,7 @@ MKFILES = $(wildcard */Makefile)
 SORTED = $(shell echo $(MKFILES) | xargs -n 1 | sort -g | xargs)
 
 bootstrap: venv
-	./bootstrap.sh cookiecutters.txt
+	./bootstrap.py cookiecutters.txt
 
 venv:
 	python -m venv venv --clear
