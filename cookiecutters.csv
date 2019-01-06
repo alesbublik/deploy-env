@@ -1,3 +1,3 @@
 source, branch or tag or commit, template data
-../cc-ansible-base-packages,   , name=00base-packages
-../cc-ansible-vim,             , name=01vim
+https://github.com/alesbublik/cc-ansible-base-packages.git, stage1   , name=00base-packages
+https://github.com/alesbublik/cc-ansible-vim.git,             , name=10vim
