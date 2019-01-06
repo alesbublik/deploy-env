@@ -1,0 +1,29 @@
+- hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+    - debug:
+        var: inventory_hostname
+    - name: install asdf
+      git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: /home/vagrant/.asdf
+        version: v0.6.2
+
+    - name: setup bash
+      blockinfile:
+        path: /home/vagrant/.bashrc
+        marker: "# ___ {mark} asdf Ansible ___"
+        block: |
+            . $HOME/.asdf/asdf.sh
+            . $HOME/.asdf/completions/asdf.bash
+        validate: "grep 'asdf Ansible' %s"
+
+    - name: setup zsh
+      blockinfile:
+        path: /home/vagrant/.zshrc
+        marker: "# ___ {mark} asdf Ansible ___"
+        block: |
+            . $HOME/.asdf/asdf.sh
+            . $HOME/.asdf/completions/asdf.bash
+        validate: "grep 'asdf Ansible' %s"
