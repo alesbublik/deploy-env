@@ -4,5 +4,5 @@
   tasks:
     - name: install base packages
       package:
-        name: [tmux, zsh, git, etckeeper, atop, htop]
+        name: [tmux, zsh, git, etckeeper, atop, htop, curl, wget]
         state: present
