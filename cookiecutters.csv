@@ -1,4 +1,5 @@
-source, branch or tag or commit, template data
+source, branch_or_tag_or_commit, template_data
+../cc-local,             , name=local
 https://github.com/alesbublik/cc-ansible-base-packages.git, , name=00base-packages
-https://github.com/alesbublik/cc-ansible-vim.git,             , name=10vim
+https://github.com/alesbublik/cc-ansible-vim.git,           , name=10vim
 ../cc-ansible-asdf,             , name=20asdf
