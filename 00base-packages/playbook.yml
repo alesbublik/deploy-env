@@ -2,6 +2,11 @@
   gather_facts: False
   become: yes
   tasks:
+    - name: Upgrade all packages to the latest version
+      apt:
+        name: "*"
+        state: latest
+
     - name: install base packages
       package:
         name: [tmux, zsh, git, etckeeper, atop, htop, curl, wget]

@@ -22,5 +22,8 @@ deploy: venv
 	@set -e; \
 	for MK in ${SORTED}; do make --no-print-directory -f $$MK deploy-$$(dirname $$MK); done
 
+console: venv
+	venv/bin/ansible-console -i inventory.ini
+
 # Should exist at least one
 include */Makefile

@@ -1,10 +1,23 @@
 - hosts: all
   gather_facts: False
-  become: yes
+  become: no
   tasks:
     - debug:
         var: inventory_hostname
-    - name: install console vim
+
+    - name: install console zsh
       package:
         name: [zsh]
         state: present
+      become: yes
+
+    - name: get $HOME variable
+      shell: echo $HOME
+      register: home
+
+    - debug: msg="{{ home.stdout }}"
+
+    - name: install oh-my-zsh
+      command: "curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+      args:
+        creates: "{{ home.stdout }}/.oh-my-zsh"
