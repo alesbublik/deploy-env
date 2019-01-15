@@ -2,6 +2,13 @@
   gather_facts: False
   become: yes
   tasks:
+    - name: install base packages
+      apt:
+        name: [aptitude]
+        state: present
+        update_cache: yes
+
+
     - name: Upgrade all packages to the latest version
       apt:
         name: "*"

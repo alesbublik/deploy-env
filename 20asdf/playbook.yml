@@ -35,6 +35,6 @@
         path: "{{ home.stdout }}/.zshrc"
         marker: "# ___ {mark} asdf Ansible ___"
         block: |
-            . {{ ansible_env.HOME }}/.asdf/asdf.sh
-            . {{ ansible_env.HOME }}/.asdf/completions/asdf.bash
+            . $HOME/.asdf/asdf.sh
+            . $HOME/.asdf/completions/asdf.bash
         validate: "grep 'asdf Ansible' %s"

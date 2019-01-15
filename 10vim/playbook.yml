@@ -6,5 +6,5 @@
         var: inventory_hostname
     - name: install console vim
       package:
-        name: vim-nox
+        name: [vim-nox, neovim]
         state: present
